@@ -1,14 +1,14 @@
-//
-//  main.cpp
-//  Lab_2_OOP
-//
-//  Created by Вячеслав Комаров on 08.12.2025.
-//
-
 #include <iostream>
+#include "Route.h"
+#include "FileTask.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return EXIT_SUCCESS;
+int main() {
+    std::cout << "ЛР2: тестовый запуск без меню\n";
+
+    Route r("Москва", "Пермь", 5);
+    std::cout << r << "\n";
+
+    FileTask::printLinesWithoutTwoDigitNumbers("test.txt");
+
+    return 0;
 }
