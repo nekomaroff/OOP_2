@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 class Route {
 private:
@@ -11,6 +12,7 @@ public:
     Route();
     Route(std::string start, std::string end, int num);
     Route(const Route& other);
+    ~Route();
 
     std::string getStartPoint() const;
     std::string getEndPoint() const;

@@ -6,8 +6,13 @@ Route::Route() : startPoint(""), endPoint(""), number(0) {}
 Route::Route(std::string start, std::string end, int num)
     : startPoint(start), endPoint(end), number(num) {}
 
-Route::Route(const Route& other)
-    : startPoint(other.startPoint), endPoint(other.endPoint), number(other.number) {}
+Route::Route(const Route& other) {
+    startPoint = other.startPoint;
+    endPoint = other.endPoint;
+    number = other.number;
+}
+
+Route::~Route() {}
 
 std::string Route::getStartPoint() const { return startPoint; }
 std::string Route::getEndPoint() const { return endPoint; }
@@ -29,14 +34,18 @@ Route& Route::operator=(const Route& other) {
 std::istream& operator>>(std::istream& in, Route& r) {
     std::cout << "Начальный пункт: ";
     in >> r.startPoint;
+
     std::cout << "Конечный пункт: ";
     in >> r.endPoint;
+
     std::cout << "Номер маршрута: ";
     in >> r.number;
+
     return in;
 }
 
 std::ostream& operator<<(std::ostream& out, const Route& r) {
-    out << r.number << ") " << r.startPoint << " → " << r.endPoint;
+    out << "Маршрут #" << r.number << ": "
+        << r.startPoint << " → " << r.endPoint;
     return out;
 }

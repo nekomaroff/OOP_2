@@ -1,14 +1,7 @@
-#include <iostream>
-#include "Route.h"
-#include "FileTask.h"
+#include "Menu.h"
 
 int main() {
-    std::cout << "ЛР2: тестовый запуск без меню\n";
-
-    Route r("Москва", "Пермь", 5);
-    std::cout << r << "\n";
-
-    FileTask::printLinesWithoutTwoDigitNumbers("test.txt");
-
+    Menu menu;
+    menu.run();
     return 0;
 }
